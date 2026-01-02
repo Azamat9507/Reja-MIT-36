@@ -29,17 +29,54 @@
 
 // Task B 
 
-function countDigits(str) {
-  let count = 0;
+// function countDigits(str) {
+//   let count = 0;
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] >= "0" && str[i] <= "9") {
-      count++;
-    }
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] >= "0" && str[i] <= "9") {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+
+// console.log(countDigits("ad2a54y79wet0sfgb9")); 
+
+// Task - C
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
   }
 
-  return count;
+  _getTime() {
+    const now = new Date();
+    return `${now.getHours()}:${now.getMinutes()}`;
+  }
+
+  qoldiq() {
+    console.log(
+      `Hozir ${this._getTime()}da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud`
+    );
+  }
+
+  sotish(mahsulot, soni) {
+    this[mahsulot] -= soni;
+    console.log(`${this._getTime()}da ${soni} ta ${mahsulot} sotildi`);
+  }
+
+  qabul(mahsulot, soni) {
+    this[mahsulot] += soni;
+    console.log(`${this._getTime()}da ${soni} ta ${mahsulot} qabul qilindi`);
+  }
 }
 
-
-console.log(countDigits("ad2a54y79wet0sfgb9")); 
+const shop = new Shop(4, 5, 2);
+shop.qoldiq();
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+shop.qoldiq();
