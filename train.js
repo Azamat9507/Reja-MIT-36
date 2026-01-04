@@ -46,37 +46,50 @@
 
 // Task - C
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  _getTime() {
-    const now = new Date();
-    return `${now.getHours()}:${now.getMinutes()}`;
-  }
+//   _getTime() {
+//     const now = new Date();
+//     return `${now.getHours()}:${now.getMinutes()}`;
+//   }
 
-  qoldiq() {
-    console.log(
-      `Hozir ${this._getTime()}da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud`
-    );
-  }
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${this._getTime()}da ${this.non} ta non, ${this.lagmon} ta lag'mon va ${this.cola} ta cola mavjud`
+//     );
+//   }
 
-  sotish(mahsulot, soni) {
-    this[mahsulot] -= soni;
-    console.log(`${this._getTime()}da ${soni} ta ${mahsulot} sotildi`);
-  }
+//   sotish(mahsulot, soni) {
+//     this[mahsulot] -= soni;
+//     console.log(`${this._getTime()}da ${soni} ta ${mahsulot} sotildi`);
+//   }
 
-  qabul(mahsulot, soni) {
-    this[mahsulot] += soni;
-    console.log(`${this._getTime()}da ${soni} ta ${mahsulot} qabul qilindi`);
-  }
+//   qabul(mahsulot, soni) {
+//     this[mahsulot] += soni;
+//     console.log(`${this._getTime()}da ${soni} ta ${mahsulot} qabul qilindi`);
+//   }
+// }
+
+// const shop = new Shop(4, 5, 2);
+// shop.qoldiq();
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq();
+
+//Task - D
+
+function checkContent(a, b) {
+  if (a.length !== b.length) return false;
+  const sortedA = a.split("").sort().join("");
+  const sortedB = b.split("").sort().join("");
+  return sortedA === sortedB;
 }
 
-const shop = new Shop(4, 5, 2);
-shop.qoldiq();
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-shop.qoldiq();
+console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(checkContent("hello", "olelh"));       
+console.log(checkContent("test", "text"));         
