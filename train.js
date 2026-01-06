@@ -83,13 +83,22 @@
 
 //Task - D
 
-function checkContent(a, b) {
-  if (a.length !== b.length) return false;
-  const sortedA = a.split("").sort().join("");
-  const sortedB = b.split("").sort().join("");
-  return sortedA === sortedB;
+// function checkContent(a, b) {
+//   if (a.length !== b.length) return false;
+//   const sortedA = a.split("").sort().join("");
+//   const sortedB = b.split("").sort().join("");
+//   return sortedA === sortedB;
+// }
+
+// console.log(checkContent("mitgroup", "gmtiprou"));
+// console.log(checkContent("hello", "olelh"));       
+// console.log(checkContent("test", "text"));         
+
+// E-Task
+
+function getReverse(str) {
+  return str.split("").reverse().join("");
 }
 
-console.log(checkContent("mitgroup", "gmtiprou"));
-console.log(checkContent("hello", "olelh"));       
-console.log(checkContent("test", "text"));         
+// Test
+console.log(getReverse("hello"));
