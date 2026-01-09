@@ -96,20 +96,34 @@
 
 // E-Task
 
-function getReverse(str) {
-  return str.split("").reverse().join("");
-}
-console.log(getReverse("hello"));
+// function getReverse(str) {
+//   return str.split("").reverse().join("");
+// }
+// console.log(getReverse("hello"));
 
-// E-task 
+// // E-task 
 
-function getReverse(str) {
-  let result = "";
+// function getReverse(str) {
+//   let result = "";
 
-  for (let i = str.length - 1; i >= 0; i--) {
-    result += str[i];
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     result += str[i];
+//   }
+
+//   return result;
+// }
+// console.log(getReverse("hello"));
+
+function findDoublers(str) {
+  for (let i = 0; i < str.length - 1; i++) {
+    if (str[i] === str[i + 1]) {
+      return true;
+    }
   }
-
-  return result;
+  return false;
 }
-console.log(getReverse("hello"));
+
+console.log(findDoublers("hello"));
+
+// agar bir hil harf bo'lalmasa false beradi
+console.log(findDoublers("world"));
